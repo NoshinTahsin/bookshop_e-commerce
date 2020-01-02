@@ -112,6 +112,19 @@ body {
 #novella{
   padding: 10px;
 }
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}
+
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media (max-width: 800px) {
   .column {
@@ -163,12 +176,12 @@ body {
 </head>
 <body>
 
-<div class="header">
+<div class="header" id="myHeader">
    
   <img src="logo.png" alt="Logo" height="80px" width="90px">
 
   <div class="header-right">
-    <i class="fa fa-shopping-cart cartalign" style="font-size:48px; color:#ff571a"></i>
+    <i class="fa fa-shopping-cart cartalign" style="font-size:35px; color:#ff571a"></i>
   </div>
 
 </div>
@@ -205,18 +218,18 @@ body {
   </div>
 
   <div class="card">
-  <img src="time_machine.jfif" alt="time_machine" style="width:100%">
-  <h3>The Time Machine</h3>
-  <h3>Author : H.G. Wells</h3>
+  <img src="animal_farm.jpg" alt="time_machine" style="width:100%">
+  <h3>Animal Farm</h3>
+  <h3>Author : George Orwell</h3>
   <p class="price">$19.99</p>
   <p>Some text about the jeans..</p>
   <p><button>Add to Cart</button></p>
   </div>
 
   <div class="card">
-  <img src="time_machine.jfif" alt="time_machine" style="width:100%">
-  <h3>The Time Machine</h3>
-  <h3>Author : H.G. Wells</h3>
+  <img src="hp.jpg" alt="time_machine" style="width:100%; ">
+  <h3>Harry Potter and The Philosopher's Stone</h3>
+  <h3>Author : J.K. Rowling</h3>
   <p class="price">$19.99</p>
   <p>Some text about the jeans..</p>
   <p><button>Add to Cart</button></p>
@@ -239,20 +252,20 @@ body {
   </div>
 
   <div class="card">
-  <img src="time_machine.jfif" alt="time_machine" style="width:100%">
-  <h3>The Time Machine</h3>
-  <h3>Author : H.G. Wells</h3>
+  <img src="whitefang.png" alt="time_machine" style="width:100%">
+  <h3>White Fang</h3>
+  <h3>Author : Jack London</h3>
   <p class="price">$19.99</p>
   <p>Some text about the jeans..</p>
   <p><button>Add to Cart</button></p>
   </div>
 
   <div class="card">
-  <img src="time_machine.jfif" alt="time_machine" style="width:100%">
-  <h3>The Time Machine</h3>
-  <h3>Author : H.G. Wells</h3>
+  <img src="matilda.jpg" alt="time_machine" style="width:100%">
+  <h3>Matilda</h3>
+  <h3>Author :  Roald Dahl</h3>
   <p class="price">$19.99</p>
-  <p>Some text about the jeans..</p>
+  <p>Illustrated by Quentin Blake</p>
   <p><button>Add to Cart</button></p>
   </div>
 
@@ -271,18 +284,18 @@ body {
   </div>
 
   <div class="card">
-  <img src="time_machine.jfif" alt="time_machine" style="width:100%">
-  <h3>The Time Machine</h3>
-  <h3>Author : H.G. Wells</h3>
+  <img src="tale.jfif" alt="time_machine" style="width:100%">
+  <h3>A Tale of Two Cities</h3>
+  <h3>Author : Charles Dickens</h3>
   <p class="price">$19.99</p>
   <p>Some text about the jeans..</p>
   <p><button>Add to Cart</button></p>
   </div>
 
   <div class="card">
-  <img src="time_machine.jfif" alt="time_machine" style="width:100%">
-  <h3>The Time Machine</h3>
-  <h3>Author : H.G. Wells</h3>
+  <img src="kafka.jpg" alt="time_machine" style="width:100%">
+  <h3>Kafka On The Shore</h3>
+  <h3>Author : Haruki Murakami</h3>
   <p class="price">$19.99</p>
   <p>Some text about the jeans..</p>
   <p><button>Add to Cart</button></p>
@@ -302,6 +315,20 @@ function myFunction() {
     x.className += " responsive";
   } else {
     x.className = "topnav";
+  }
+}
+
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("myTopnav");
+//var header = document.getElementById("my");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
   }
 }
 </script>
