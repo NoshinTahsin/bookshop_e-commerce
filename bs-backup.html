@@ -1,0 +1,258 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="bookshopstyle.css" media="screen" title="no title" charset="utf-8">
+<script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+ 
+</head>
+<body>
+
+<div class="header" id="myHeader">
+   
+  <img src="logo.png" alt="Logo" height="50px" width="90px">
+
+  <div class="header-right">
+    <i class="fa fa-shopping-cart " style="font-size:35px; color:#ff571a"></i>
+    <span class='badge badge-warning' id='lblCartCount'> 5 </span>
+
+  </div>
+
+</div>
+
+
+<div class="topnav" id="myTopnav">
+  <a href="#home" class="active">Home</a>
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<!-- Header -->
+<div class="header">
+  
+  <h1 align="center">Choose books for your bookshelf!</h1>
+   
+</div>
+
+<!-- Photo Grid -->
+<div class="row"> 
+  <div class="column">
+
+  <div class="card">
+  <img src="fahrenhite.jpg" alt="fahrenhite-451" style="width:100%">
+  <div>
+    <p>Fahrenhite 451</p>
+    <p>Author : Ray Bradbury</p>
+    <p>A dystopian novel</p>
+  </div>
+  
+  <p class="price">$19.99</p>
+  
+  <div class="quantity">
+      <button class="plus-btn" type="button" name="button">
+            <img src="plus.svg" alt="" />
+      </button>
+      <input type="text" name="name" value="1">
+          <button class="minus-btn" type="button" name="button">
+            <img src="minus.svg" alt="" />
+      </button>
+  </div>
+  
+
+   
+  </div>
+
+  <div class="card">
+  <img src="animal_farm.jpg" alt="time_machine" style="width:100%">
+
+
+  <div>
+    <p>Animal Farm</p>
+    <p>Author : George Orwell</p>
+    <p>A dystopian novel</p>
+  </div>
+  
+  <p class="price">$19.99</p>
+  
+  <div class="quantity">
+      <button class="plus-btn" type="button" name="button">
+            <img src="plus.svg" alt="" />
+      </button>
+      <input type="text" name="name" value="1">
+          <button class="minus-btn" type="button" name="button">
+            <img src="minus.svg" alt="" />
+      </button>
+  </div>
+
+
+  </div>
+
+  <div class="card">
+  <img src="hp.jpg" alt="time_machine" style="width:100%; ">
+
+  <div>
+    <p>Harry Potter and The Philosopher's Stone</p>
+    <p>Author : J.K. Rowling</p>
+    <p>A dystopian novel</p>
+  </div>
+  
+  <p class="price">$19.99</p>
+  
+  <div class="quantity">
+      <button class="plus-btn" type="button" name="button">
+            <img src="plus.svg" alt="" />
+      </button>
+      <input type="text" name="name" value="1">
+          <button class="minus-btn" type="button" name="button">
+            <img src="minus.svg" alt="" />
+      </button>
+  </div>
+
+
+  </div>
+
+   
+
+
+  </div>
+  
+  <div class="column">
+    
+  <div class="card">
+  <img src="time_machine.jfif" alt="time_machine" style="width:100%">
+  <h3>The Time Machine</h3>
+  <h3>Author : H.G. Wells</h3>
+  <p class="price">$19.99</p>
+  <p>Sci-Fi</p>
+  <p><button>Add to Cart</button></p>
+  </div>
+
+  <div class="card">
+  <img src="whitefang.png" alt="time_machine" style="width:100%">
+  <h3>White Fang</h3>
+  <h3>Author : Jack London</h3>
+  <p class="price">$19.99</p>
+  <p>Some text about the jeans..</p>
+  <p><button>Add to Cart</button></p>
+  </div>
+
+  <div class="card">
+  <img src="matilda.jpg" alt="time_machine" style="width:100%">
+  <h3>Matilda</h3>
+  <h3>Author :  Roald Dahl</h3>
+  <p class="price">$19.99</p>
+  <p>Illustrated by Quentin Blake</p>
+  <p><button>Add to Cart</button></p>
+  </div>
+
+    
+  </div> 
+   
+  <div class="column">
+    
+  <div class="card">
+  <img src="little_prince.jpg" alt="little_prince" style="width:100%">
+  <h2>The Little Prince</h2>
+  <h3>Author : Antoine de Saint-Exupéry</h3>
+  <p class="price">$19.99</p>
+  <p id="novella">Novella : An awesome journey for people of all ages</p>
+  <p><button>Add to Cart</button></p>
+  </div>
+
+  <div class="card">
+  <img src="tale.jfif" alt="time_machine" style="width:100%">
+  <h3>A Tale of Two Cities</h3>
+  <h3>Author : Charles Dickens</h3>
+  <p class="price">$19.99</p>
+  <p>Some text about the jeans..</p>
+  <p><button>Add to Cart</button></p>
+  </div>
+
+  <div class="card">
+  <img src="kafka.jpg" alt="time_machine" style="width:100%">
+  <h3>Kafka On The Shore</h3>
+  <h3>Author : Haruki Murakami</h3>
+  <p class="price">$19.99</p>
+  <p>Some text about the jeans..</p>
+  <p><button>Add to Cart</button></p>
+  </div>
+
+  </div>
+  
+
+
+</div>
+
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("myTopnav");
+//var header = document.getElementById("my");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+
+$('.minus-btn').on('click', function(e) {
+        e.preventDefault();
+        var $this = $(this);
+        var $input = $this.closest('div').find('input');
+        var value = parseInt($input.val());
+        
+       
+
+
+        if (value > 1) {
+          value = value - 1;
+        } else {
+          value = 0;
+        }
+
+        $input.val(value);
+
+        var $badge = $(this).find('.badge');
+        var count = Number($badge.text());
+
+        window.alert(count);
+
+      });
+
+      $('.plus-btn').on('click', function(e) {
+        e.preventDefault();
+        var $this = $(this);
+        var $input = $this.closest('div').find('input');
+        var value = parseInt($input.val());
+
+        if (value < 100) {
+          value = value + 1;
+        } else {
+          value =100;
+        }
+
+        $input.val(value);
+      });
+</script>
+
+</body>
+</html>
