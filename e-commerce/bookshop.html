@@ -2,186 +2,22 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="bookshopstyle.css" media="screen" title="no title" charset="utf-8">
+ 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-
-* {box-sizing: border-box;}
-
-body { 
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.header {
-  overflow: hidden;
-  background-color: white;
-  padding: 10px 10px;
-}
-
-.header-right {
-  float: right;
-}
-
-.cartalign{
-  padding: 20px;
-}
-
-/* Add a black background color to the top navigation */
-.topnav {
-  background-color: #333;
-  overflow: hidden;
-}
-
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-/* Change the color of links on hover */
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-/* Add an active class to highlight the current page */
-.topnav a.active {
-  background-color: #ff571a;
-  color: white;
-}
-
-/* Hide the link that should open and close the topnav on small screens */
-.topnav .icon {
-  display: none;
-}
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 4px;
-}
-
-/* Create four equal columns that sits next to each other */
-.column {
-  flex: 33%;
-  max-width: 33%;
-  padding: 0 4px;
-}
-
-.column img {
-  margin-top: 8px;
-  vertical-align: middle;
-}
-
-
-
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-  text-align: center;
-  font-family: arial;
-}
-
-.price {
-  color: grey;
-  font-size: 22px;
-}
-
-.card button {
-  border: none;
-  outline: 0;
-  padding: 12px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-}
-
-.card button:hover {
-  opacity: 0.7;
-}
-
-#novella{
-  padding: 10px;
-}
-
-/* The sticky class is added to the navbar with JS when it reaches its scroll position */
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-.sticky + .content {
-  padding-top: 60px;
-}
-
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media (max-width: 800px) {
-  .column {
-    flex: 50%;
-    max-width: 50%;
-  }
-}
-
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media (max-width: 600px) {
-  .column {
-    flex: 100%;
-    max-width: 100%;
-  }
-}
-
-@media screen and (max-width: 500px) {
-   
-  .header-right {
-    float: none;
-  }
-}
-
-/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-@media screen and (max-width: 600px) {
-  .topnav a:not(:first-child) {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
-
-/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-@media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive a.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-}
-
-</style>
+ 
+ 
 </head>
 <body>
 
 <div class="header" id="myHeader">
    
-  <img src="logo.png" alt="Logo" height="80px" width="90px">
+  <img src="logo.png" alt="Logo" height="50px" width="90px">
 
   <div class="header-right">
-    <i class="fa fa-shopping-cart cartalign" style="font-size:35px; color:#ff571a"></i>
+    <i class="fa fa-shopping-cart " style="font-size:35px; color:#ff571a"></i>
+    <span class='badge badge-warning' id='lblCartCount' > 0 </span>
+
   </div>
 
 </div>
@@ -210,29 +46,75 @@ body {
 
   <div class="card">
   <img src="fahrenhite.jpg" alt="fahrenhite-451" style="width:100%">
-  <h2>Fahrenhite 451</h2>
-  <h3>Author : Ray Bradbury</h3>
+  <div>
+    <p>Fahrenhite 451</p>
+    <p>Author : Ray Bradbury</p>
+    <p>A dystopian novel</p>
+  </div>
+  
   <p class="price">$19.99</p>
-  <p>A dystopian novel</p>
-  <p><button>Add to Cart</button></p>
+  
+  <div class="quantity">
+      <button class="plus-btn" id="plus" type="button" onclick="increment()" name="button">
+            <img src="plus.svg" alt="" />
+      </button>
+      <input type="text" name="name" id="product_count" value="1">
+          <button class="minus-btn" id="minus" type="button" onclick="decrement()" name="button">
+            <img src="minus.svg" alt="" />
+      </button>
+  </div>
+  
+
+   
   </div>
 
   <div class="card">
   <img src="animal_farm.jpg" alt="time_machine" style="width:100%">
-  <h3>Animal Farm</h3>
-  <h3>Author : George Orwell</h3>
+
+
+  <div>
+    <p>Animal Farm</p>
+    <p>Author : George Orwell</p>
+    <p>A dystopian novel</p>
+  </div>
+  
   <p class="price">$19.99</p>
-  <p>Some text about the jeans..</p>
-  <p><button>Add to Cart</button></p>
+  
+  <div class="quantity">
+      <button class="plus-btn" type="button" onclick="increment()" name="button">
+            <img src="plus.svg" alt="" />
+      </button>
+      <input type="text" name="name" id="product_count" value="1">
+          <button class="minus-btn" type="button" onclick="decrement()" name="button">
+            <img src="minus.svg" alt="" />
+      </button>
+  </div>
+
+
   </div>
 
   <div class="card">
   <img src="hp.jpg" alt="time_machine" style="width:100%; ">
-  <h3>Harry Potter and The Philosopher's Stone</h3>
-  <h3>Author : J.K. Rowling</h3>
+
+  <div>
+    <p>Harry Potter and The Philosopher's Stone</p>
+    <p>Author : J.K. Rowling</p>
+    <p>A dystopian novel</p>
+  </div>
+  
   <p class="price">$19.99</p>
-  <p>Some text about the jeans..</p>
-  <p><button>Add to Cart</button></p>
+  
+  <div class="quantity">
+      <button class="plus-btn" type="button" onclick="increment()" name="button">
+            <img src="plus.svg" alt="" />
+      </button>
+      <input type="text" name="name" id="product_count" value="1">
+          <button class="minus-btn" type="button" onclick="decrement()" name="button">
+            <img src="minus.svg" alt="" />
+      </button>
+  </div>
+
+
   </div>
 
    
@@ -244,29 +126,71 @@ body {
     
   <div class="card">
   <img src="time_machine.jfif" alt="time_machine" style="width:100%">
-  <h3>The Time Machine</h3>
-  <h3>Author : H.G. Wells</h3>
+
+  <div>
+    <p>The Time Machine</p>
+    <p>Author : H.G. Wells</p>
+    <p>A dystopian novel</p>
+  </div>
+  
   <p class="price">$19.99</p>
-  <p>Sci-Fi</p>
-  <p><button>Add to Cart</button></p>
+  
+  <div class="quantity">
+      <button class="plus-btn" type="button" onclick="increment()" name="button">
+            <img src="plus.svg" alt="" />
+      </button>
+      <input type="text" name="name" id="product_count" value="1">
+          <button class="minus-btn" type="button" onclick="decrement()" name="button">
+            <img src="minus.svg" alt="" />
+      </button>
+  </div>
+
   </div>
 
   <div class="card">
   <img src="whitefang.png" alt="time_machine" style="width:100%">
-  <h3>White Fang</h3>
-  <h3>Author : Jack London</h3>
+
+   <div>
+    <p>White Fang</p>
+    <p>Author : Jack London</p>
+    <p>A dystopian novel</p>
+  </div>
+  
   <p class="price">$19.99</p>
-  <p>Some text about the jeans..</p>
-  <p><button>Add to Cart</button></p>
+  
+  <div class="quantity">
+      <button class="plus-btn" type="button" onclick="increment()" name="button">
+            <img src="plus.svg" alt="" />
+      </button>
+      <input type="text" name="name" id="product_count" value="1">
+          <button class="minus-btn" type="button" onclick="decrement()" name="button">
+            <img src="minus.svg" alt="" />
+      </button>
+  </div>
+
   </div>
 
   <div class="card">
   <img src="matilda.jpg" alt="time_machine" style="width:100%">
-  <h3>Matilda</h3>
-  <h3>Author :  Roald Dahl</h3>
+
+   <div>
+    <p>Matilda</p>
+    <p>Author : Roald Dahl</p>
+    <p>A dystopian novel</p>
+  </div>
+  
   <p class="price">$19.99</p>
-  <p>Illustrated by Quentin Blake</p>
-  <p><button>Add to Cart</button></p>
+  
+  <div class="quantity">
+      <button class="plus-btn" type="button" onclick="increment()" name="button">
+            <img src="plus.svg" alt="" />
+      </button>
+      <input type="text" name="name" id="product_count" value="1">
+          <button class="minus-btn" type="button" onclick="decrement()" name="button">
+            <img src="minus.svg" alt="" />
+      </button>
+  </div>
+
   </div>
 
     
@@ -276,29 +200,71 @@ body {
     
   <div class="card">
   <img src="little_prince.jpg" alt="little_prince" style="width:100%">
-  <h2>The Little Prince</h2>
-  <h3>Author : Antoine de Saint-Exupéry</h3>
+
+   <div>
+    <p>The Little Prince</p>
+    <p>Author : Antoine de Saint-Exupéry</p>
+    <p>A dystopian novel</p>
+  </div>
+  
   <p class="price">$19.99</p>
-  <p id="novella">Novella : An awesome journey for people of all ages</p>
-  <p><button>Add to Cart</button></p>
+  
+  <div class="quantity">
+      <button class="plus-btn" type="button" onclick="increment()" name="button">
+            <img src="plus.svg" alt="" />
+      </button>
+      <input type="text" name="name" id="product_count" value="1">
+          <button class="minus-btn" type="button" onclick="decrement()" name="button">
+            <img src="minus.svg" alt="" />
+      </button>
+  </div>
+
+   
   </div>
 
   <div class="card">
   <img src="tale.jfif" alt="time_machine" style="width:100%">
-  <h3>A Tale of Two Cities</h3>
-  <h3>Author : Charles Dickens</h3>
+
+    <div>
+    <p>A Tale of Two Cities</p>
+    <p>Author : Charles Dickens</p>
+    <p>A dystopian novel</p>
+  </div>
+  
   <p class="price">$19.99</p>
-  <p>Some text about the jeans..</p>
-  <p><button>Add to Cart</button></p>
+  
+  <div class="quantity">
+      <button class="plus-btn" type="button" onclick="increment()" name="button">
+            <img src="plus.svg" alt="" />
+      </button>
+      <input type="text" name="name" id="product_count" value="1">
+          <button class="minus-btn" type="button" onclick="decrement()" name="button">
+            <img src="minus.svg" alt="" />
+      </button>
+  </div>
+
   </div>
 
   <div class="card">
   <img src="kafka.jpg" alt="time_machine" style="width:100%">
-  <h3>Kafka On The Shore</h3>
-  <h3>Author : Haruki Murakami</h3>
+
+   <div>
+    <p>Kafka On The Shore</p>
+    <p>Author : Haruki Murakami</p>
+    <p>A dystopian novel</p>
+  </div>
+  
   <p class="price">$19.99</p>
-  <p>Some text about the jeans..</p>
-  <p><button>Add to Cart</button></p>
+  
+  <div class="quantity">
+      <button class="plus-btn" type="button" onclick="increment()" name="button">
+            <img src="plus.svg" alt="" />
+      </button>
+      <input type="text" name="name" id="product_count" value="1">
+          <button class="minus-btn" type="button" onclick="decrement()" name="button">
+            <img src="minus.svg" alt="" />
+      </button>
+  </div>
   </div>
 
   </div>
@@ -331,6 +297,74 @@ function myFunction() {
     navbar.classList.remove("sticky");
   }
 }
+
+var p;
+var badgeValue;
+function increment() {
+  p=document.getElementById("product_count").value;
+  p++;
+  document.getElementById("product_count").value=p;
+  document.getElementById("lblCartCount").innerHTML=p;
+
+  //window.alert(badgeValue);
+}
+
+
+function decrement() {
+  p=document.getElementById("product_count").value;
+  if(p>1)
+    p--;
+  else
+    p=0;
+
+
+  document.getElementById("product_count").value=p;
+
+  //window.alert(document.getElementById("lblCartCount").innerHTML);
+
+  document.getElementById("lblCartCount").innerHTML=p;
+
+ // ;
+}
+
+$('.minus-btn').on('click', function(e) {
+        e.preventDefault();
+        var $this = $(this);
+        var $input = $this.closest('div').find('input');
+        var value = parseInt($input.val());
+        
+       
+
+
+        if (value > 1) {
+          value = value - 1;
+        } else {
+          value = 0;
+        }
+
+        $input.val(value);
+
+        var $badge = $(this).find('.badge');
+        var count = Number($badge.text());
+
+        window.alert(count);
+
+      });
+
+      $('.plus-btn').on('click', function(e) {
+        e.preventDefault();
+        var $this = $(this);
+        var $input = $this.closest('div').find('input');
+        var value = parseInt($input.val());
+
+        if (value < 100) {
+          value = value + 1;
+        } else {
+          value =100;
+        }
+
+        $input.val(value);
+      });
 </script>
 
 </body>
