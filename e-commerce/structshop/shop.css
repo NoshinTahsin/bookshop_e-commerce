@@ -1,0 +1,207 @@
+* {box-sizing: border-box;}
+
+body,p { 
+  margin: 0;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.header {
+  overflow: hidden;
+  background-color: white;
+  padding: 10px 10px;
+}
+
+.header-right {
+  float: right;
+}
+
+.cartalign{
+  padding: 20px;
+}
+
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  background-color: #ff571a;
+  color: white;
+}
+
+.topnav .cart-image {
+  position:relative;
+  margin-right: :30px;
+  float: right;
+  width: 40px;
+  height: 40px;
+
+}
+
+
+.topnav .cart-image .fa .fa-shopping-cart  {
+    width: 40px;
+    height: 40px; 
+
+
+
+}
+
+.cart-image{
+  padding-top: 10px;
+   right:30px;
+
+
+}
+
+.topnav .cart-image .counter {
+    position: absolute;
+    top: 0;
+    right: -5px;
+    padding: 3px 7px;
+    background-color: #ff571a;
+    color: white; 
+    font-size: 12px;
+    border-radius: 20px;
+    text-align: center;
+    vertical-align: top;
+}
+
+ 
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  flex-direction: row;
+   justify-content: center;
+
+}
+
+.product-list {
+
+   margin: 100px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   flex:80%;
+   max-width: 80%;
+   align-content: center;
+   align-items: center;
+   align-self: stretch;
+
+
+}
+
+.product-list .card {
+
+  width: 33%;
+  flex:33%;
+  align-self: stretch;
+  flex-wrap: wrap;
+  padding: 40px;  
+	
+  
+}
+
+.card .product-image {
+
+	align-self: stretch;
+
+}
+
+.card .product-image img {
+     
+     width: 100%;
+     flex:100%;
+     height: 500px;
+     max-height: 500px;
+     display: flex;
+     flex-wrap: wrap;
+
+}
+
+.card .product-info {
+     text-align: center;
+     
+}
+
+.card .product-info .title {
+    
+}
+
+.card .product-info .price {
+     
+}
+
+.card .description {
+     
+}
+
+.card .add-cart-action {
+ }
+
+.card .add-cart-btn {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #4CAF50;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.card .add-cart-btn:hover {
+    background-color: #46a049;
+}
+
+.disable {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 800px) {
+  .product-list .card {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .product-list .card{
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+   
+  .header-right {
+    float: none;
+  }
+}
+
