@@ -38,6 +38,20 @@
         uitil.storage.setData('cart-product', cartProduct);
         counter = cartProduct.length;
         uitil.domQuery.setDomInnerHTML(counterDom, counter);
+
+        let showProduct=uitil.storage.getData('cart-product');
+        let alertString="";
+
+        for(ss=0;ss<counter;ss++){ 
+            
+            let no=ss+1;
+            alertString+="Product-"+no+"\nTitle: "+showProduct[ss].title+
+            "\nAuthor: "+showProduct[ss].author+
+            "\nPrice: "+showProduct[ss].price+"\n\n";
+   
+        }
+
+        window.alert( alertString);
     }
 
 }
@@ -91,7 +105,7 @@ function utiliy() {
             },
             {
                 id: 3, img: 'hp.jpg',
-                title: 'Harry Potter and The Philosopher\'s Stone', author: 'J.K. Rowling', price: 'BDT 170', des: 'Fantasy'
+                title: 'Harry Potter and The Philosopher\'s Stone', author: 'J.K. Rowling ', price: 'BDT 170', des: 'Fantasy'
             },
             {
                 id: 4, img: 'time_machine.jfif',

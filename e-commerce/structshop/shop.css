@@ -5,7 +5,7 @@ body,p {
   font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
-.header {
+.logo {
   overflow: hidden;
   background-color: white;
   padding: 10px 10px;
@@ -114,11 +114,12 @@ body,p {
 
 .product-list .card {
 
-  width: 33%;
-  flex:33%;
+  width: 25%;
+  flex:25%;
   align-self: stretch;
   flex-wrap: wrap;
   padding: 40px;  
+  flex-grow:0;
 	
   
 }
@@ -131,30 +132,37 @@ body,p {
 
 .card .product-image img {
      
-     width: 100%;
+    width: 100%;
      flex:100%;
-     height: 500px;
+     height: 300px;
      max-height: 500px;
      display: flex;
      flex-wrap: wrap;
-
 }
 
 .card .product-info {
      text-align: center;
+
+
      
 }
 
 .card .product-info .title {
-    
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
 }
 
-.card .product-info .price {
-     
+.card .product-info .author {
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
 }
 
-.card .description {
-     
+.card .product-info .des {
+      white-space: nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
 }
 
 .card .add-cart-action {
