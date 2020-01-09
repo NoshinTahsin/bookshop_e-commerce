@@ -10,9 +10,8 @@
    
     // const vbtn= viewbtn.domQuery.getDomByQuery('.button-cart');
     
-    let cartProduct = [], counter = cartProduct.length;
-    const counterDom = uitil.domQuery.getDomByQuery('.counter');
-    uitil.domQuery.setDomInnerHTML(counterDom, counter);
+    
+    let cartProduct = [];
 
     const productListDom = uitil.domQuery.getDomByQuery('.product-list');
 
@@ -42,7 +41,7 @@
                 const disBtn = uitil.domQuery.getDomByQuery(`.button-${id}`);
                 //disBtn.classList.add('disable');
  
-                cc.cartCalculation(id, cartProduct, counter, viewbtn, close);
+                cc.cartCalculation(id, viewbtn);
                 
                 
             });
@@ -51,7 +50,7 @@
 
     viewbtn.addEventListener('click', osn);
     function osn(){
-        uitil.domQuery.getDomByQuery(".sidenav").style.width = "250px";
+        uitil.domQuery.getDomByQuery(".sidenav").style.width = "500px";
         var para = uitil.domQuery.getDomByTag("P");
        // uitil.domQuery.setDomInnerHTML(para[0],"Saaj");
  

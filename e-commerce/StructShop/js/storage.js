@@ -2,7 +2,7 @@ function Storage(){
     
     function WebStorage() {
 
-    this.getData = (name, initValue) => {
+    this.getData = (name, initValue=[]) => {
         const data = localStorage.getItem(name);
         return data && IsJsonString(data) ? JSON.parse(data) : initValue;
     }
