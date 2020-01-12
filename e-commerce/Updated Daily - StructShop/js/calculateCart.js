@@ -10,11 +10,33 @@ function calculateCart(){
     const product_list=ProductList();
     const products = product_list.productList();
     const product = products.find( pro => pro.id === id);
- 
+    //quantity should be increased in localstorage
+     
     let cartProduct=store_var.storage.getData('cart-product');
-    cartProduct = [...cartProduct, product];
-    store_var.storage.setData('cart-product', cartProduct);
+    var localstorageLength=cartProduct.length;
+    //localstorageLength=parseInt(localstorageLength);
 
+   //finding the product if it already exists
+    var flagStore=false;
+
+    if(localstorageLength!=0){
+            for(ls=0;ls<localstorageLength;ls++){
+                if( cartProduct[ls].id==id){
+                    //product already added to local storage
+                    //just increase the quantity 
+                    cartProduct[ls].quantity++;
+                    store_var.storage.setData('cart-product', cartProduct);
+                    flagStore=true;
+                }
+            }
+    }
+
+    if(localstorageLength==0 || flagStore==false){
+           //add product to localstorage
+           cartProduct = [...cartProduct, product];
+           store_var.storage.setData('cart-product', cartProduct);
+    }
+    
     counter = cartProduct.length;
     uitil.domQuery.setDomInnerHTML(counterDom, counter);
     

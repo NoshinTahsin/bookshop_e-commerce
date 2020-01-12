@@ -7,6 +7,10 @@
     const viewbtn = uitil.domQuery.getDomByQuery('.cart-image');
     const close = uitil.domQuery.getDomByQuery('.closebtn');
     const productListDom = uitil.domQuery.getDomByQuery('.product-list');
+    const store_var=Storage();
+    
+    let cartProduct=[];
+    store_var.storage.setData('cart-product', cartProduct);
 
     this.populateProduct = () => {
         const products = product_list.productList();
@@ -27,7 +31,6 @@
                 id = parseInt(id);
                 const disBtn = uitil.domQuery.getDomByQuery(`.button-${id}`);
                 uitil.domQuery.getDomByQuery(`.di-button-${id}`).style.display="block";
-                
                 cc.cartCalculation(id, viewbtn);  
             });
         }

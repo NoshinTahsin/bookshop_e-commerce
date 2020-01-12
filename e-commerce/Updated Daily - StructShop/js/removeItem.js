@@ -4,7 +4,7 @@ function RemoveItemFromCart(){
 
         const store_var=Storage();
         let cartProduct=store_var.storage.getData('cart-product');
-        
+
         function checkRemoval(){
             cartProduct.forEach(pro => {
                 return pro.rem_id!=rem_id;
