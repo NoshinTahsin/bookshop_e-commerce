@@ -17,6 +17,18 @@ function CardCreation(){
             <div class="add-cart-action">
                 <button class="add-cart-btn button-${product.id}" data-id="${product.id}">Add to Cart</button>
             </div>
+
+            <div class="quantity di-button-${product.id}">
+                <button class="plus-btn plus-btn-${product.id}" data-id="${product.id}" id="plus" type="button"   name="button">
+                    +
+                </button>
+                <span class="pro-quantity pro-quantity-${product.id}">${product.quantity}</span>
+                <button class="minus-btn minus-btn-${product.id}" data-id="${product.id}" id="minus" type="button"   name="button">
+                    -
+                </button>
+            </div>
+
+
         </div>
         
         `;
