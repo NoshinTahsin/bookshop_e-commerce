@@ -9,6 +9,8 @@ function Utiliy() {
             return document.getElementsByClassName(selector);
         }
 
+        
+
         this.getDomByTag = (selector) => {
             return document.getElementsByTagName(selector);
         }

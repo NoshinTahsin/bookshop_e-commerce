@@ -3,7 +3,7 @@ function calculateCart(){
     function cartCalculation(id, viewbtn) {
 
     const cartcard=CreateCartCard();
-    const rmv=RemoveItemFromCart(); 
+    
     const store_var=Storage();
     const uitil = Utiliy();
     const counterDom = uitil.domQuery.getDomByQuery('.counter');
@@ -16,7 +16,7 @@ function calculateCart(){
     var localstorageLength=cartProduct.length;
     //localstorageLength=parseInt(localstorageLength);
 
-   //finding the product if it already exists
+    //finding the product if it already exists
     var flagStore=false;
 
     if(localstorageLength!=0){
@@ -59,25 +59,15 @@ function calculateCart(){
     function osn(){
         uitil.domQuery.getDomByQuery(".sidenav").style.width = "500px";
         var para = uitil.domQuery.getDomByTag("P");
-        const rmv_cart = uitil.domQuery.getDomByQuery('.remove-cart-action');
-        rmv_cart_func(rmv_cart); 
+        //const rmv_cart = uitil.domQuery.getDomByQuery('.remove-cart-action');
+        //rmv_cart_func(rmv_cart); 
         close.addEventListener('click', csn);
         function csn(){
             uitil.domQuery.getDomByQuery(".sidenav").style.width = "0px";
         }
     }
 
-    function rmv_cart_func(dom){
-            
-        const len = dom.length;         
-        for (let e = 0; e < len; e++) {
-            dom[e].addEventListener('click', (e) => {
-                let {rem_id} = e.target.dataset;
-                rem_id = parseInt(rem_id);
-                rmv.RemoveItem(rem_id);  
-            });
-        }      
-    }
+     
     }
     return {cartCalculation};
 }
