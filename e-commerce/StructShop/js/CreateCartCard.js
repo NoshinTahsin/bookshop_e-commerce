@@ -13,7 +13,7 @@ function CreateCartCard(){
                 <h4 class="cart-author">${cartItem.author}</h4>
                 <h4 class="cart-des">${cartItem.des}</h4>
                 <h4 class="cart-price">${cartItem.price}</h4>
-                <h4 class="cart-quantity">0</h4>
+                <h4 class="cart-quantity">${cartItem.quantity}</h4>
                 
             </div>
 

@@ -8,6 +8,7 @@
     const close = uitil.domQuery.getDomByQuery('.closebtn');
     const productListDom = uitil.domQuery.getDomByQuery('.product-list');
     const store_var=Storage();
+    const rmv=RemoveItemFromCart(); 
 
     let cartProduct=[];
     store_var.storage.setData('cart-product', cartProduct);
@@ -21,14 +22,15 @@
         uitil.domQuery.setDomInnerHTML(productListDom, proDom);
         const btn = uitil.domQuery.getDomByClass('add-cart-btn');
         const plusbtn = uitil.domQuery.getDomByClass('plus-btn');
+        const minusbtn = uitil.domQuery.getDomByClass('minus-btn');
 
       // const plusbtn =  document.getElementById('plus');
      //  debugger
-        addToCartEvent(btn,plusbtn);
+        addToCartEvent(btn,plusbtn,minusbtn);
 
     }
 
-    function addToCartEvent(dom, domplus)
+    function addToCartEvent(dom, domplus, domminus)
     {
         const len = dom.length;
         for (let e = 0; e < len; e++) {
@@ -38,20 +40,24 @@
                // debugger
                 const disBtn = uitil.domQuery.getDomByQuery(`.button-${id}`);
                 uitil.domQuery.getDomByQuery(`.di-button-${id}`).style.display="block";
-               uitil.domQuery.getDomByQuery(`.button-${id}`).style.display="none";
+                uitil.domQuery.getDomByQuery(`.button-${id}`).style.display="none";
                 cc.cartCalculation(id, viewbtn);  
             });
         }
 
-       const lenplus = domplus.length;
+        const lenplus = domplus.length;
         for (let e = 0; e < lenplus; e++) {
             domplus[e].addEventListener('click', (e) => {
                 let {id} = e.target.dataset;
-              //  id = parseInt(id);
-                debugger
-              //  const disBtn = uitil.domQuery.getDomByQuery(`.button-${id}`);
-              //  uitil.domQuery.getDomByQuery(`.di-button-${id}`).style.display="block";
                 cc.cartCalculation(id, viewbtn);  
+            });
+        }
+
+        const lenminus = domminus.length;
+        for (let e = 0; e < lenminus; e++) {
+            domminus[e].addEventListener('click', (e) => {
+                let {id} = e.target.dataset;
+                rmv.RemoveItem(id, viewbtn);  
             });
         }
 

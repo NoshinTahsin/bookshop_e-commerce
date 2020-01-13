@@ -19,12 +19,13 @@ function CardCreation(){
             </div>
 
             <div class="quantity di-button-${product.id}">
-                <button class="plus-btn plus-btn-${product.id}" data-id="${product.id}" id="plus" type="button"   name="button">
-                    +
-                </button>
-                <span class="pro-quantity pro-quantity-${product.id}">${product.quantity}</span>
                 <button class="minus-btn minus-btn-${product.id}" data-id="${product.id}" id="minus" type="button"   name="button">
                     -
+                </button>
+                <span class="pro-quantity pro-quantity-${product.id}">${product.quantity}</span>
+    
+                <button class="plus-btn plus-btn-${product.id}" data-id="${product.id}" id="plus" type="button"   name="button">
+                    +
                 </button>
             </div>
 
