@@ -15,6 +15,10 @@ function Utiliy() {
             return document.getElementsByTagName(selector);
         }
 
+        this.getDomInnerHTML = (dom) => {
+            return dom.innerHTML;
+        }
+
         this.setDomInnerHTML = (dom, value) => {
             dom.innerHTML = value;
         }

@@ -8,8 +8,9 @@
     const close = uitil.domQuery.getDomByQuery('.closebtn');
     const productListDom = uitil.domQuery.getDomByQuery('.product-list');
     const store_var=Storage();
-    const rmv=RemoveItemFromCart(); 
-
+    const rmv=RemoveItemFromCart();
+    
+    
     let cartProduct=[];
     store_var.storage.setData('cart-product', cartProduct);
 
@@ -23,6 +24,9 @@
         const btn = uitil.domQuery.getDomByClass('add-cart-btn');
         const plusbtn = uitil.domQuery.getDomByClass('plus-btn');
         const minusbtn = uitil.domQuery.getDomByClass('minus-btn');
+        
+       
+        console.log(uitil.domQuery.getDomByClass('remove-cart-action'));
 
       // const plusbtn =  document.getElementById('plus');
      //  debugger
@@ -30,7 +34,10 @@
 
     }
 
-    function addToCartEvent(dom, domplus, domminus)
+    const atc=AddToCart();
+    const incdec=IncDec();
+
+    function addToCartEvent(dom, domplus, domminus )
     {
         const len = dom.length;
         for (let e = 0; e < len; e++) {
@@ -41,7 +48,7 @@
                 const disBtn = uitil.domQuery.getDomByQuery(`.button-${id}`);
                 uitil.domQuery.getDomByQuery(`.di-button-${id}`).style.display="block";
                 uitil.domQuery.getDomByQuery(`.button-${id}`).style.display="none";
-                cc.cartCalculation(id, viewbtn);  
+                atc.AddToCart(id, viewbtn);  
             });
         }
 
@@ -49,7 +56,7 @@
         for (let e = 0; e < lenplus; e++) {
             domplus[e].addEventListener('click', (e) => {
                 let {id} = e.target.dataset;
-                cc.cartCalculation(id, viewbtn);  
+                incdec.IncDec(id, viewbtn);  
             });
         }
 
@@ -61,7 +68,8 @@
             });
         }
 
-
+       
+       
     } 
 
     viewbtn.addEventListener('click', osn);

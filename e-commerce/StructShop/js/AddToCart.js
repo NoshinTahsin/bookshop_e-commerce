@@ -1,7 +1,6 @@
-function calculateCart(){
-
-    function cartCalculation(id, viewbtn) {
-
+function AddToCart(){
+    function AddToCart(id,viewbtn){
+        
     const cartcard=CreateCartCard();
     
     const store_var=Storage();
@@ -13,36 +12,19 @@ function calculateCart(){
     //quantity should be increased in localstorage
      
     let cartProduct=store_var.storage.getData('cart-product');
-    var localstorageLength=cartProduct.length;
+   // var localstorageLength=cartProduct.length;
     //localstorageLength=parseInt(localstorageLength);
 
-    //finding the product if it already exists
-    var flagStore=false;
-
-    if(localstorageLength!=0){
-            for(ls=0;ls<localstorageLength;ls++){
-                if(cartProduct[ls].id==id){
-                    //product already added to local storage
-                    //just increase the quantity 
-                    cartProduct[ls].quantity++;
-                    store_var.storage.setData('cart-product', cartProduct);
-                    flagStore=true;
-                }
-            }
-    }
-
-    if(localstorageLength==0 || flagStore==false){
-           //add product to localstorage
-           cartProduct = [...cartProduct, product];
-           store_var.storage.setData('cart-product', cartProduct);
-    }
+    //add product to localstorage
+    cartProduct = [...cartProduct, product];
+    store_var.storage.setData('cart-product', cartProduct);
     
     counter = cartProduct.length;
     uitil.domQuery.setDomInnerHTML(counterDom, counter);
     
     let navcard = '';
     const navcardlist = uitil.domQuery.getDomByQuery('.nav-list');
-    const productListDom = uitil.domQuery.getDomByQuery('.product-list');
+   // const productListDom = uitil.domQuery.getDomByQuery('.product-list');
 
     
     let rem_counter=0; //to set unique id for each remove button
@@ -89,6 +71,8 @@ function calculateCart(){
     }
 
      
+
     }
-    return {cartCalculation};
+
+    return {AddToCart};
 }
